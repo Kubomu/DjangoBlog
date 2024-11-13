@@ -1,0 +1,13 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+<!-- templates/blog/post_list.html -->
+<h1>Blog Posts</h1>
+<ul>
+    {% for post in posts %}
+        <li>
+            <a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
+            <p>by {{ post.author }} | {{ post.created_at }}</p>
+        </li>
+    {% endfor %}
+</ul>
